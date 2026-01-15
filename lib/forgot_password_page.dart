@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foody/login_page.dart';
+import 'package:foody/verification_page.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
@@ -15,7 +16,7 @@ class ForgotPasswordPage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 50, left: 24),
+                padding: const EdgeInsets.only(top: 50, left: 20),
                 child: Align(
                   alignment: AlignmentGeometry.topLeft,
                   child: IconButton(
@@ -89,6 +90,7 @@ class ForgotPasswordPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextField(
+                          keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Color(0xff32343E)),
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(
@@ -112,7 +114,14 @@ class ForgotPasswordPage extends StatelessWidget {
                         width: 350,
                         height: 62,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VerificationPage(),
+                              ),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xffFF7622),
                             shape: RoundedRectangleBorder(

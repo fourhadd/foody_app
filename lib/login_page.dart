@@ -65,6 +65,17 @@ class _LoginPageState extends State<LoginPage> {
                           Container(
                             child: Column(
                               children: [
+                                Align(
+                                  alignment: AlignmentGeometry.topLeft,
+                                  child: Text(
+                                    'NAME',
+                                    style: TextStyle(
+                                      fontFamily: 'Sen',
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
                                 SizedBox(height: 8),
                                 SizedBox(
                                   width: 350,
@@ -87,7 +98,6 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
-
                                         hintText: 'example@gmail.com',
                                         hintStyle: TextStyle(
                                           fontFamily: 'Sen',
@@ -274,7 +284,7 @@ class _LoginPageState extends State<LoginPage> {
                               color: Color(0xff646982),
                             ),
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -295,7 +305,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 32),
+                          // SizedBox(height: 32),
                           // Spacer(),
                         ],
                       ),

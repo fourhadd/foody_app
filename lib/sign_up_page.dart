@@ -22,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 50, left: 24),
+                padding: const EdgeInsets.only(top: 50, left: 20),
                 child: Align(
                   alignment: AlignmentGeometry.topLeft,
 
