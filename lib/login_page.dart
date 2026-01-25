@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/first_page.dart';
 import 'package:foody/sign_up_page.dart';
 import 'forgot_password_page.dart';
 
@@ -221,7 +222,14 @@ class _LoginPageState extends State<LoginPage> {
                             width: 327,
                             height: 62,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FirstPage(),
+                                  ),
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Color(0xffFF7622),
                                 shape: RoundedRectangleBorder(

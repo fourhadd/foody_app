@@ -84,6 +84,30 @@ flutter:
     - assets/images/eye_off.png
     - assets/images/go_back.png
 
+    - assets/images/down_icon.png
+    - assets/images/sideBack_icon.png
+    - assets/images/menu_icon.png
+    - assets/images/budget_icon.png
+    - assets/images/search_icon.png
+    - assets/images/pizza.jpg
+    - assets/images/burger.jpg
+    - assets/images/pasta.jpg
+    - assets/images/sushi.jpg
+    - assets/images/salad.jpg
+    - assets/images/steak.jpg
+    - assets/images/taco.jpg
+    - assets/images/sandwich.jpg
+    - assets/images/dessert.jpg
+    - assets/images/soup.jpg
+    - assets/images/rose_garden.jpg
+    - assets/images/ocean_view.jpg
+    - assets/images/mountain_grill.png
+    - assets/images/city_bites.jpg
+
+    - assets/images/sunset_diner.jpg
+    - assets/images/star_icon.png
+    - assets/images/clock_icon.png
+    - assets/images/delivery_icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
