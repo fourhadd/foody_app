@@ -21,17 +21,24 @@ class VerificationPage extends StatelessWidget {
                   alignment: AlignmentGeometry.topLeft,
                   child: IconButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pop(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ForgotPasswordPage(),
                         ),
                       );
                     },
-                    icon: Image.asset(
-                      "assets/images/go_back.png",
+                    icon: Container(
                       width: 45,
                       height: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Color(0xff5E616F),
+                      ),
                     ),
                   ),
                 ),

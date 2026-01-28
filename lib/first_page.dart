@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/menu_page.dart';
 import 'services.dart';
 import 'response.dart';
 
@@ -44,61 +45,104 @@ class _FirstPageState extends State<FirstPage> {
             children: [
               // SizedBox(height: 18),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                      "assets/images/menu_icon.png",
-                      width: 45,
-                      height: 45,
-                    ),
-                  ),
-                  SizedBox(width: 18),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Text(
-                        "Deliver to",
-                        style: TextStyle(
-                          fontFamily: 'Sen',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xffFC6E2A),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MenuPage()),
+                          );
+                        },
+                        child: Container(
+                          width: 45,
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Color(0xffECF0F4),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Icon(Icons.menu, color: Color(0xff181C2E)),
                         ),
                       ),
-                      Row(
+                      SizedBox(width: 18),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Halal Lab office",
+                            "Deliver to",
                             style: TextStyle(
                               fontFamily: 'Sen',
                               fontSize: 14,
                               fontWeight: FontWeight.w700,
-                              color: Color(0xff676767),
+                              color: Color(0xffFC6E2A),
                             ),
                           ),
-                          SizedBox(width: 8),
                           GestureDetector(
-                            onTap: () {},
-                            child: Image.asset(
-                              "assets/images/down_icon.png",
-                              width: 10,
-                              height: 7,
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Halal Lab office",
+                                  style: TextStyle(
+                                    fontFamily: 'Sen',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xff676767),
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Icon(Icons.arrow_drop_down_outlined, size: 30),
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(width: 72),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                      "assets/images/budget_icon.png",
-                      width: 45,
-                      height: 49,
-                    ),
+                  // SizedBox(width: 72),
+                  Stack(
+                    alignment: AlignmentGeometry.topRight,
+                    clipBehavior: Clip.none,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 45,
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Color(0xff181C2E),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: -8,
+                        child: Container(
+                          width: 25,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFF7622),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              '2',
+                              style: TextStyle(
+                                fontFamily: 'Sen',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -155,10 +199,10 @@ class _FirstPageState extends State<FirstPage> {
                           ),
                           prefixIcon: IconButton(
                             onPressed: () {},
-                            icon: Image.asset(
-                              "assets/images/search_icon.png",
-                              width: 20,
-                              height: 20,
+                            icon: Icon(
+                              Icons.search,
+                              size: 28,
+                              color: Color(0xffA0A5BA),
                             ),
                           ),
                         ),
@@ -193,14 +237,7 @@ class _FirstPageState extends State<FirstPage> {
                         ),
                       ),
                       SizedBox(width: 10),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Image.asset(
-                          "assets/images/sideBack_icon.png",
-                          width: 5,
-                          height: 10,
-                        ),
-                      ),
+                      forwardIcon(),
                     ],
                   ),
                 ],
@@ -318,14 +355,7 @@ class _FirstPageState extends State<FirstPage> {
                         ),
                       ),
                       SizedBox(width: 10),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Image.asset(
-                          "assets/images/sideBack_icon.png",
-                          width: 5,
-                          height: 10,
-                        ),
-                      ),
+                      forwardIcon(),
                     ],
                   ),
                 ],
@@ -333,13 +363,14 @@ class _FirstPageState extends State<FirstPage> {
               SizedBox(height: 20),
 
               Container(
-                width: 327,
+                width: MediaQuery.of(context).size.width * 1,
                 height: 270,
                 decoration: BoxDecoration(color: Colors.white),
                 child: restaurants.isEmpty
                     ? Center(child: CircularProgressIndicator())
                     : ListView.builder(
                         scrollDirection: Axis.horizontal,
+                        clipBehavior: Clip.antiAlias,
                         itemCount: restaurants.length,
                         itemBuilder: (context, index) {
                           final restaurant = restaurants[index];
@@ -405,10 +436,9 @@ class _FirstPageState extends State<FirstPage> {
                                           SizedBox(height: 14),
                                           Row(
                                             children: [
-                                              Image.asset(
-                                                "assets/images/star_icon.png",
-                                                width: 20,
-                                                height: 20,
+                                              Icon(
+                                                Icons.star_border,
+                                                color: Color(0xffFF7622),
                                               ),
                                               SizedBox(width: 4),
                                               Text(
@@ -421,10 +451,9 @@ class _FirstPageState extends State<FirstPage> {
                                                 ),
                                               ),
                                               SizedBox(width: 24),
-                                              Image.asset(
-                                                "assets/images/delivery_icon.png",
-                                                width: 23,
-                                                height: 16,
+                                              Icon(
+                                                Icons.delivery_dining_outlined,
+                                                color: Color(0xffFF7622),
                                               ),
                                               SizedBox(width: 4),
                                               Text(
@@ -438,10 +467,9 @@ class _FirstPageState extends State<FirstPage> {
                                                 ),
                                               ),
                                               SizedBox(width: 24),
-                                              Image.asset(
-                                                "assets/images/clock_icon.png",
-                                                width: 23,
-                                                height: 16,
+                                              Icon(
+                                                Icons.access_time,
+                                                color: Color(0xffFF7622),
                                               ),
                                               SizedBox(width: 4),
                                               Text(
@@ -472,6 +500,22 @@ class _FirstPageState extends State<FirstPage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class forwardIcon extends StatelessWidget {
+  const forwardIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Icon(
+        Icons.arrow_forward_ios_rounded,
+        color: Color(0xffA0A5BA),
+        size: 15,
       ),
     );
   }

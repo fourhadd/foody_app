@@ -28,15 +28,22 @@ class _SignUpPageState extends State<SignUpPage> {
 
                   child: IconButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pop(
                         context,
                         MaterialPageRoute(builder: (context) => LoginPage()),
                       );
                     },
-                    icon: Image.asset(
-                      "assets/images/go_back.png",
+                    icon: Container(
                       width: 45,
                       height: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Color(0xff5E616F),
+                      ),
                     ),
                   ),
                 ),
@@ -214,12 +221,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                       });
                                     },
 
-                                    icon: Image.asset(
+                                    icon: Icon(
                                       passwordHide
-                                          ? "assets/images/eye_off.png"
-                                          : "assets/images/eye_logo.png",
-                                      width: 14,
-                                      height: 14,
+                                          ? Icons.visibility_off_outlined
+                                          : Icons.remove_red_eye_rounded,
+                                      color: Color(0xffB4B9CA),
                                     ),
                                   ),
                                 ),
@@ -275,12 +281,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                         repasswordHide = !repasswordHide;
                                       });
                                     },
-                                    icon: Image.asset(
+                                    icon: Icon(
                                       repasswordHide
-                                          ? "assets/images/eye_off.png"
-                                          : "assets/images/eye_logo.png",
-                                      width: 14,
-                                      height: 14,
+                                          ? Icons.visibility_off_outlined
+                                          : Icons.remove_red_eye_rounded,
+                                      color: Color(0xffB4B9CA),
                                     ),
                                   ),
                                 ),

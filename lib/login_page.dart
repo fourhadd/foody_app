@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:foody/first_page.dart';
 import 'package:foody/sign_up_page.dart';
 import 'forgot_password_page.dart';
@@ -166,12 +167,11 @@ class _LoginPageState extends State<LoginPage> {
                                               passwordHide = !passwordHide;
                                             });
                                           },
-                                          icon: Image.asset(
+                                          icon: Icon(
                                             passwordHide
-                                                ? "assets/images/eye_off.png"
-                                                : "assets/images/eye_logo.png",
-                                            width: 19,
-                                            height: 14,
+                                                ? Icons.visibility_off_outlined
+                                                : Icons.remove_red_eye_rounded,
+                                            color: Color(0xffB4B9CA),
                                           ),
                                         ),
                                       ),
@@ -223,11 +223,12 @@ class _LoginPageState extends State<LoginPage> {
                             height: 62,
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
+                                Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => FirstPage(),
                                   ),
+                                  (route) => false,
                                 );
                               },
                               style: ElevatedButton.styleFrom(
@@ -296,20 +297,38 @@ class _LoginPageState extends State<LoginPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Image.asset(
-                                "assets/images/facebook_logo.png",
+                              Container(
                                 width: 62,
                                 height: 62,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff395998),
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: Icon(
+                                  FontAwesomeIcons.facebook,
+                                  color: Colors.white,
+                                ),
                               ),
-                              Image.asset(
-                                "assets/images/twitter_logo.png",
+                              Container(
                                 width: 62,
                                 height: 62,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff169CE8),
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: Icon(
+                                  FontAwesomeIcons.twitter,
+                                  color: Colors.white,
+                                ),
                               ),
-                              Image.asset(
-                                "assets/images/apple_logo.png",
+                              Container(
                                 width: 62,
                                 height: 62,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: Icon(Icons.apple, color: Colors.white),
                               ),
                             ],
                           ),

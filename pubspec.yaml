@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
     
   flutter_launcher_icons: "^0.14.4"
+  font_awesome_icon_class: ^0.0.6
   shared_preferences: ^2.5.4
 
 flutter_launcher_icons:
@@ -71,24 +72,16 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/apple_logo.png
-    - assets/images/facebook_logo.png
-    - assets/images/twitter_logo.png
+   
     - assets/images/foody.png
     - assets/images/location_logo.png
     - assets/images/secondary_card.png
     - assets/images/main_photo.png
     - assets/images/chef_photo.png
     - assets/images/delivery_photo.png
-    - assets/images/eye_logo.png
-    - assets/images/eye_off.png
-    - assets/images/go_back.png
+    
 
-    - assets/images/down_icon.png
-    - assets/images/sideBack_icon.png
-    - assets/images/menu_icon.png
-    - assets/images/budget_icon.png
-    - assets/images/search_icon.png
+   
     - assets/images/pizza.jpg
     - assets/images/burger.jpg
     - assets/images/pasta.jpg
@@ -105,9 +98,7 @@ flutter:
     - assets/images/city_bites.jpg
 
     - assets/images/sunset_diner.jpg
-    - assets/images/star_icon.png
-    - assets/images/clock_icon.png
-    - assets/images/delivery_icon.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
